@@ -1,0 +1,68 @@
+@import "reset.css";
+
+body {
+    background-color: #f6f9fc;
+    font-family: -apple-system monospace Roboto sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    padding: 50px 0;
+}
+
+.canvas {
+    width: 500px;
+    height: 600px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(50, 50, 90, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+.controls {
+    padding: 30px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.control__range input:in-range {
+    margin-bottom: 30px;
+    width: 400px;
+}
+.control__btns {
+    margin-bottom: 30px;
+}
+
+.control__btns button {
+    all: unset;
+    cursor: pointer;
+    background: #fff;
+    width: 80px;
+    padding: 5px 0 ;
+    border-radius: 5px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(50, 50, 90, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0,0,0, 0.2);
+    color: rgba(0,0,0, 0.8);
+    text-transform: unset;
+    font-weight: 800;
+    font-size: 12px;
+}
+.control__btns button:active {
+    transform: scale(0.98);
+
+}
+.controls_colors {
+    display: flex;
+}
+.controls_colors > div {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin: 0 2px;
+    box-shadow: 0 4px 6px rgba(50, 50, 90, 0.11), 0 1px 3px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    opacity: .8;
+}
+
+.controls_colors > div:hover {
+    opacity: 1;
+}
