@@ -3,50 +3,40 @@ const canvas = document.getElementById("jsCanvas");
 const ctx = canvas.getContext("2d");
 let painting = false;
 
+// canvas pixel manipulation 안주면 동작을 안험, css세팅한 값으로 줌.
+canvas.width = 500;
+canvas.height= 600;
+
 ctx.strokeStyle = "#222";
 ctx.lineWidth = "2.5";
 
 function startPainting() {
+    painting = true;
+    
 
 }
 function stopPainting() {
     painting = false;
 }
 
-function onMouseDown(event) {
-    painting = true;
-    console.log(event);
-}
-
 function onMouseMove(event) {
     //전체 윈도우의 좌표 clientX, clientY
     // 캔버스 안에서의 가로세로 값은 offsetX, Y
-    if(painting==true) {
-        const x = event.offsetX;
-        const y = event.offsetY;
-        console.log(x, y);
+    const x = event.offsetX;
+    const y = event.offsetY;
+    if(!painting) {
+        ctx.beginPath();
+        ctx.moveTo(x,y);
+    } else {
+        ctx.lineTo(x,y);
+        ctx.stroke();
+        // ctx.closePath(); //path를 끝내버림선이 끊겨, 시작점은 오로지 비긴패스 위치,
     }
 }
 
 if(canvas) {
     canvas.addEventListener("mousemove", onMouseMove);
-    canvas.addEventListener("mousedown", onMouseDown);
+    canvas.addEventListener("mousedown", startPainting);
     canvas.addEventListener("mouseup", stopPainting);
     canvas.addEventListener("mouseleave", stopPainting);
 }
-
-//
-// (function() {
-//
-//
-//
-//     let getSize = function () {
-//
-//     };
-//
-//     function init() {
-//
-//     }
-//     init();
-//
-// })();
