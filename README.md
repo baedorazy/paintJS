@@ -1,3 +1,5 @@
 # paintJS
 painting board made with vanilla js
-lean js, chrome app
+
+----------
+lean HTML5 Canvas drawing and download image
