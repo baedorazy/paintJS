@@ -1,3 +1,4 @@
 # paintJS
-painting board made with vanilla js
-lean js, chrome app
+------------
+- painting board made with vanilla js
+- lean canvas control, drawing canvas edit
