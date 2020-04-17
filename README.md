@@ -1,4 +1,3 @@
 # paintJS
-------------
-- painting board made with vanilla js
+- painting board made with vanillajs
 - lean canvas control, drawing canvas edit
