@@ -9,13 +9,13 @@ const CANVAS_WIDTH = 500;
 const CANVAS_HEIGHT = 600;
 let painting = false;
 let filling = false;
+const INITIAL_COLOR = "#222";
 
-// canvas pixel manipulation 안주면 동작을 안험, css에 세팅한 값으로 줌.
+// canvas pixel manipulation 안주면 동작을 안해, css에 세팅한 값으로 줌.
 canvas.width = CANVAS_WIDTH;
 canvas.height= CANVAS_HEIGHT;
 
-const INITIAL_COLOR ="#222";
-ctx.fillStyle = "#fff";  // 배경
+ctx.fillStyle   = "#fff";  // 배경
 ctx.strokeStyle = INITIAL_COLOR; // 라인
 ctx.lineWidth   = "2.5";
 ctx.fillRect(0,0, canvas.width, canvas.height);
@@ -68,7 +68,6 @@ function handleClearCanvas() {
     ctx.strokeStyle = INITIAL_COLOR;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
-
 
 function startPainting() {
     painting = true;
